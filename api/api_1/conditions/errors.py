@@ -41,4 +41,4 @@ class UnavailableExpression(BaseError):
 
   @property
   def message(self):
-    return self.gettext('Unavailable expression %(e)s for %(p)s')
+    return self.gettext('Unavailable expression %(m)s for %(p)s')
