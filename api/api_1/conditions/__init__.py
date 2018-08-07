@@ -4,7 +4,7 @@ from api.restful import (
     RequestParser,
     status,
   )
-from .article import Article, get_conditions_as_text
+from .article import Article
 from .errors import BaseError
 
 
@@ -67,8 +67,5 @@ class Conditions(Resource):
       response = a.validate(conditions)
     except BaseError as e:
       raise BadRequest(e.message)
-
-    print('HELLLO = ', get_conditions_as_text(conditions))
-
 
     return response, status.OK
