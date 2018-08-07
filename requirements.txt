@@ -8,7 +8,6 @@ Flask==1.0.2
 Flask-Babel==0.11.2
 Flask-Cors==3.0.6
 idna==2.7
-ingenix==1.0.1
 itsdangerous==0.24
 Jinja2==2.10
 jsonref==0.1
