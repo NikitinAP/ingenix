@@ -1,0 +1,65 @@
+swagger: '2.0'
+info:
+  version: '1'
+  title: INGENIX
+  description: API тестового задания ingenix
+schemes:
+  - http
+consumes:
+  - application/json
+host: localhost:5000
+basePath: /api/v1
+securityDefinitions:
+  ApiKeyAuth:
+    type: apiKey
+    in: query
+    name: api_key
+paths:
+  '/conditions':
+    post:
+      tags:
+        - conditions
+      summary: Проверяет логическое выражение
+      produces:
+        - application/json
+      operationId: validate
+      parameters:
+        - $ref: '#/parameters/lang'
+        - name: json
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              article:
+                type: string
+              conditions:
+                type: object
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/response'
+        '400':
+          description: BAD_REQUEST
+          schema:
+            $ref: '#/definitions/response'
+definitions:
+  response:
+    type: object
+    properties:
+      status:
+        type: string
+      code:
+        type: number
+      result:
+        type: object
+parameters:
+  lang:
+    name: lang
+    in: query
+    type: string
+    description: >
+      Language:
+       * `en` - english
+       * `ru` - russian
