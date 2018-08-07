@@ -48,13 +48,13 @@ class Article(object):
 
 
       for rule in condition['rules']:
-        obj = getattr(self, rule['object'])
+        obj = getattr(self, rule['object'], None)
 
         # неизвестный object
         if obj is None or not isinstance(obj, Object):
           raise UnknownObject(m=rule['object'])
 
-        prop = getattr(obj, rule['property'])
+        prop = getattr(obj, rule['property'], None)
 
         # неизвестный property
         if prop is None or not isinstance(prop, Property):

@@ -35,6 +35,7 @@ paths:
                 type: string
               conditions:
                 type: object
+            example: {"article": "Текст, который необходимо проверить", "conditions": {"operator": "and", "rules": [{"object": "text", "property": "content", "expression": "contains", "value": "Привет"}, {"object": "text", "property": "length", "expression": "more", "value": 10}], "groups": [{"operator": "or", "rules": [{"object": "category", "property": "title", "expression": "equal", "value": "Новости"}, {"object": "category", "property": "title", "expression": "equal", "value": "Животные"}]}, {"operator": "and", "rules": [{"object": "category", "property": "title", "expression": "in", "value": ["Животные", "Новости"]}]}]}}
       responses:
         '200':
           description: OK

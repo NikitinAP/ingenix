@@ -60,5 +60,4 @@ class ConditionsTests(unittest.TestCase):
   def test_S1(self):
     client = create_client()
     resp, http = client.conditions.validate(json=data).result()
-    # print('RESPONSE = ', resp['result'])
     self.assertEqual(http.status_code, 200)
