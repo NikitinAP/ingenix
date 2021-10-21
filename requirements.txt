@@ -1,4 +1,4 @@
-Babel==2.6.0
+Babel==2.9.1
 bravado==10.1.0
 bravado-core==5.0.5
 certifi==2018.4.16
